@@ -7,3 +7,26 @@ env/
 # Ignore other unnecessary files
 __pycache__/
 *.log
+
+# Python
+*.pyc
+__pycache__/
+
+# Virtual Environment
+env/
+venv/
+
+# Environment Variables
+.env
+
+# Logs
+*.log
+
+# Database
+db.sqlite3
+
+# VSCode / Editor
+.vscode/
+
+# OS files
+.DS_Store
