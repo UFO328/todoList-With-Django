@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registrasi</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+
+  </head>
+  <body>
+    <section class="section is-fullheight is-light">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-12-mobile is-6-tablet is-4-desktop">
+              {% if messages %}
+                {% for msg in messages %}
+                  <div class="notification {% if msg.tags == 'error' %}is-danger{%endif%}">
+                    <p class="has-text-centered">{{msg}}</p>
+                {% endfor %}
+              {% endif %}
+              </div>
+              <div class="card">
+                <div class="card-content">
+                  <h2 class="title has-text-centered">Registrasi</h2>
+                  <form action="{% url 'accounts_app:registrasi' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="field">
+                      <label class="label">Username</label>
+                      <input type="text" name="username" class="input is-primary" placeholder="masukan username" required=""/>
+                    </div>
+                    <div class="field">
+                      <label class="label">Email</label>
+                      <input type="email" name="email" class="input is-primary" placeholder="masukan email" required=""/>
+                    </div>
+                    <div class="field">
+                      <label class="label">Password</label>
+                      <input type="password" name="password" class="input is-primary" placeholder="masukan password" required=""/>
+                    </div>
+                    <div class="field">
+                      <label class="label">Confirm Password</label>
+                      <input type="password" name="confirm" class="input is-primary" placeholder="masukan password" required=""/>
+                    </div>
+                    <div class="field">
+                      <button type="submit" class="button is-primary is-fullwidth">Register Now</button>
+                      
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

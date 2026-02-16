@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+  <title>Task</title>
+</head>
+
+<body>
+<section class="section is-fullheight is-light">
+  <div class="container">
+    
+    <!-- FORM TAMBAH TASK -->
+    <div class="columns is-centered">
+      <div class="column is-12-mobile is-6-tablet is-4-desktop">
+        
+        <div class="card">
+          <div class="card-content">
+            <p class="title has-text-centered">ADD TASK</p>
+
+            <form action="{% url 'task_app:add_task' %}" method="POST">
+              {% csrf_token %}
+              <div class="field">
+                <label class="label">Add Task</label>
+                <div class="control">
+                  <input type="text" name="task" 
+                         class="input is-primary" 
+                         placeholder="Masukkan tugas" 
+                         required>
+                </div>
+              </div>
+
+              <button type="submit" class="button is-primary is-fullwidth">
+                Add
+              </button>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- LIST TASK -->
+    <div class="columns is-centered mt-4">
+      <div class="column is-12-mobile is-6-tablet is-4-desktop">
+
+        {% for task in page_obj %}
+        <div class="card mb-4">
+          <div class="card-content">
+            
+            <p class="title is-5">{{ task.task_name }}</p>
+
+            <button 
+              class="button is-small is-info js-modal-trigger"
+              data-target="modal-{{ task.id }}">
+              Edit
+            </button>
+
+          </div>
+        </div>
+
+        <!-- MODAL -->
+        <div id="modal-{{ task.id }}" class="modal">
+          <div class="modal-background"></div>
+
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Edit Task</p>
+              <button class="delete" aria-label="close"></button>
+            </header>
+
+            <section class="modal-card-body">
+              <form action="{% url 'task_app:edit_task' task.id %}" method="POST">
+                {% csrf_token %}
+                <div class="field">
+                  <label class="label">Task</label>
+                  <div class="control">
+                    <input type="text" 
+                           name="newTask" 
+                           class="input" 
+                           value="{{ task.task_name }}" 
+                           required>
+                  </div>
+                </div>
+
+                <button type="submit" class="button is-primary">
+                  Update
+                </button>
+              </form>
+            </section>
+
+          </div>
+        </div>
+
+        {% endfor %}
+
+      </div>
+    </div>
+
+    {% include 'components/pagination.html' %}
+
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  function openModal($el) {
+    $el.classList.add('is-active');
+  }
+
+  function closeModal($el) {
+    $el.classList.remove('is-active');
+  }
+
+  function closeAllModals() {
+    document.querySelectorAll('.modal').forEach(($modal) => {
+      closeModal($modal);
+    });
+  }
+
+  document.querySelectorAll('.js-modal-trigger').forEach(($trigger) => {
+    const modal = $trigger.dataset.target;
+    const $target = document.getElementById(modal);
+
+    $trigger.addEventListener('click', () => {
+      openModal($target);
+    });
+  });
+
+  document.querySelectorAll(
+    '.modal-background, .delete'
+  ).forEach(($close) => {
+    const $target = $close.closest('.modal');
+
+    $close.addEventListener('click', () => {
+      closeModal($target);
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === "Escape") {
+      closeAllModals();
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>
