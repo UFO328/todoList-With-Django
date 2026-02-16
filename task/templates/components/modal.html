@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+  </head>
+  <body>
+    <section class="section is-fullheight is-light">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-12-mobile is-11-tablet is-8-desktop">
+            <div id="modal-{{ task.id }}" class="modal">
+               <div class="modal-background"></div>
+                 <div class="modal-card">
+                    <header class="modal-card-head">
+                       <p class="modal-card-title">Edit Task</p>
+                        <button class="delete" aria-label="close"></button>
+                    </header>
+            <section class="modal-card-body">
+              <form action="{% url 'task_app:edit_task' task.id %}" method="POST">
+                {% csrf_token %}
+                <div class="field">
+                  <label class="label">Task</label>
+                  <div class="control">
+                    <input type="text" 
+                           name="newTask" 
+                           class="input" 
+                           value="{{ task.task_name }}" 
+                           required>
+                  </div>
+                </div>
+
+                <button type="submit" class="button is-primary">
+                  Update
+                </button>
+              </form>
+            </section>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="{% static 'js/modal.js' %}"></script>
+  </body>
+</html>

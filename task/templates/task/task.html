@@ -45,57 +45,20 @@
     <!-- LIST TASK -->
     <div class="columns is-centered mt-4">
       <div class="column is-12-mobile is-6-tablet is-4-desktop">
-
         {% for task in page_obj %}
-        <div class="card mb-4">
+        <div class="card mb-2">
           <div class="card-content">
-            
             <p class="title is-5">{{ task.task_name }}</p>
-
+            <p class="subtitle is-small">create at {{task.create_at}}</p>
             <button 
               class="button is-small is-info js-modal-trigger"
               data-target="modal-{{ task.id }}">
               Edit
             </button>
-
           </div>
         </div>
-
-        <!-- MODAL -->
-        <div id="modal-{{ task.id }}" class="modal">
-          <div class="modal-background"></div>
-
-          <div class="modal-card">
-            <header class="modal-card-head">
-              <p class="modal-card-title">Edit Task</p>
-              <button class="delete" aria-label="close"></button>
-            </header>
-
-            <section class="modal-card-body">
-              <form action="{% url 'task_app:edit_task' task.id %}" method="POST">
-                {% csrf_token %}
-                <div class="field">
-                  <label class="label">Task</label>
-                  <div class="control">
-                    <input type="text" 
-                           name="newTask" 
-                           class="input" 
-                           value="{{ task.task_name }}" 
-                           required>
-                  </div>
-                </div>
-
-                <button type="submit" class="button is-primary">
-                  Update
-                </button>
-              </form>
-            </section>
-
-          </div>
-        </div>
-
+         {% include 'components/modal.html' %}
         {% endfor %}
-
       </div>
     </div>
 
@@ -103,51 +66,5 @@
 
   </div>
 </section>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-
-  function openModal($el) {
-    $el.classList.add('is-active');
-  }
-
-  function closeModal($el) {
-    $el.classList.remove('is-active');
-  }
-
-  function closeAllModals() {
-    document.querySelectorAll('.modal').forEach(($modal) => {
-      closeModal($modal);
-    });
-  }
-
-  document.querySelectorAll('.js-modal-trigger').forEach(($trigger) => {
-    const modal = $trigger.dataset.target;
-    const $target = document.getElementById(modal);
-
-    $trigger.addEventListener('click', () => {
-      openModal($target);
-    });
-  });
-
-  document.querySelectorAll(
-    '.modal-background, .delete'
-  ).forEach(($close) => {
-    const $target = $close.closest('.modal');
-
-    $close.addEventListener('click', () => {
-      closeModal($target);
-    });
-  });
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === "Escape") {
-      closeAllModals();
-    }
-  });
-
-});
-</script>
-
 </body>
 </html>

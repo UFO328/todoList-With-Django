@@ -206,3 +206,11 @@
 2026-02-16 09:09:34.452 WIB [10127] LOG:  database system is ready to accept connections
 2026-02-16 09:14:34.558 WIB [10133] LOG:  checkpoint starting: time
 2026-02-16 09:14:35.245 WIB [10133] LOG:  checkpoint complete: wrote 6 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.627 s, sync=0.021 s, total=0.698 s; sync files=7, longest=0.009 s, average=0.003 s; distance=9 kB, estimate=9 kB; lsn=0/26E0480, redo lsn=0/26E0428
+2026-02-16 11:19:27.846 WIB [26131] FATAL:  lock file "postmaster.pid" already exists
+2026-02-16 11:19:27.846 WIB [26131] HINT:  Is another postmaster (PID 10127) running in data directory "/data/data/com.termux/files/usr/var/lib/postgresql"?
+2026-02-16 11:24:44.578 WIB [10133] LOG:  checkpoint starting: time
+2026-02-16 11:24:45.570 WIB [10133] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.934 s, sync=0.012 s, total=0.992 s; sync files=10, longest=0.002 s, average=0.002 s; distance=10 kB, estimate=10 kB; lsn=0/26E2EC0, redo lsn=0/26E2E68
+2026-02-16 11:29:44.672 WIB [10133] LOG:  checkpoint starting: time
+2026-02-16 11:29:45.331 WIB [10133] LOG:  checkpoint complete: wrote 6 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.626 s, sync=0.007 s, total=0.660 s; sync files=7, longest=0.003 s, average=0.001 s; distance=10 kB, estimate=10 kB; lsn=0/26E5898, redo lsn=0/26E5840
+2026-02-16 11:34:44.442 WIB [10133] LOG:  checkpoint starting: time
+2026-02-16 11:34:45.416 WIB [10133] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.930 s, sync=0.011 s, total=0.985 s; sync files=10, longest=0.003 s, average=0.002 s; distance=12 kB, estimate=12 kB; lsn=0/26E8B98, redo lsn=0/26E8B40
