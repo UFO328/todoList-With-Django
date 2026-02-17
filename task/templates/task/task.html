@@ -9,16 +9,14 @@
 
 <body>
 <section class="section is-fullheight is-light">
+  {% include 'components/nav.html' %}
   <div class="container">
-    
     <!-- FORM TAMBAH TASK -->
     <div class="columns is-centered">
       <div class="column is-12-mobile is-6-tablet is-4-desktop">
-        
         <div class="card">
           <div class="card-content">
             <p class="title has-text-centered">ADD TASK</p>
-
             <form action="{% url 'task_app:add_task' %}" method="POST">
               {% csrf_token %}
               <div class="field">
@@ -30,40 +28,16 @@
                          required>
                 </div>
               </div>
-
               <button type="submit" class="button is-primary is-fullwidth">
                 Add
               </button>
             </form>
-
           </div>
         </div>
-
       </div>
     </div>
-
-    <!-- LIST TASK -->
-    <div class="columns is-centered mt-4">
-      <div class="column is-12-mobile is-6-tablet is-4-desktop">
-        {% for task in page_obj %}
-        <div class="card mb-2">
-          <div class="card-content">
-            <p class="title is-5">{{ task.task_name }}</p>
-            <p class="subtitle is-small">create at {{task.create_at}}</p>
-            <button 
-              class="button is-small is-info js-modal-trigger"
-              data-target="modal-{{ task.id }}">
-              Edit
-            </button>
-          </div>
-        </div>
-         {% include 'components/modal.html' %}
-        {% endfor %}
-      </div>
-    </div>
-
+    {% include 'components/listTask.html' %}
     {% include 'components/pagination.html' %}
-
   </div>
 </section>
 </body>

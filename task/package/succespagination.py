@@ -2,8 +2,8 @@ from django.core.paginator import Paginator
 from ..models import Task
 
 
-def paginationList(request):
-  qs = Task.objects.filter(user=request.user,is_completed=False)
+def paginationListSucces(request):
+  qs = Task.objects.filter(user=request.user,is_completed=True)
   
   paginator = Paginator(qs,5)
   

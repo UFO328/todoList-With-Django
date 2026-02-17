@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+  <title>Success Task</title>
+</head>
+
+<body>
+  <section class="section is-light">
+    <header>
+      {% include 'components/nav.html' %}
+    </header>
+    <div class="container">
+      <div class="columns is-multiline is-centered">
+        {% for task in page_obj %}
+        <div class="column is-12-mobile is-6-tablet is-4-desktop">
+          <div class="card has-background-success-light">
+            <div class="card-content">
+              <p class="title is-5 mb-2">
+                {{ task.task_name }}
+              </p>
+              <p class="subtitle is-7 has-text-grey">
+                Created at {{ task.create_at }}
+              </p>
+            </div>
+          </div>
+        </div>
+        {% empty %}
+        <div class="column is-12">
+          <div class="notification is-light has-text-centered">
+            Belum ada task yang selesai.
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% include 'components/pagination.html' %}
+    </div>
+  </section>
+</body>
+</html>

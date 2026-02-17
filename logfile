@@ -214,3 +214,54 @@
 2026-02-16 11:29:45.331 WIB [10133] LOG:  checkpoint complete: wrote 6 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.626 s, sync=0.007 s, total=0.660 s; sync files=7, longest=0.003 s, average=0.001 s; distance=10 kB, estimate=10 kB; lsn=0/26E5898, redo lsn=0/26E5840
 2026-02-16 11:34:44.442 WIB [10133] LOG:  checkpoint starting: time
 2026-02-16 11:34:45.416 WIB [10133] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.930 s, sync=0.011 s, total=0.985 s; sync files=10, longest=0.003 s, average=0.002 s; distance=12 kB, estimate=12 kB; lsn=0/26E8B98, redo lsn=0/26E8B40
+2026-02-16 14:49:47.700 WIB [10133] LOG:  checkpoint starting: time
+2026-02-16 14:49:48.265 WIB [10133] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.520 s, sync=0.011 s, total=0.571 s; sync files=6, longest=0.004 s, average=0.002 s; distance=10 kB, estimate=12 kB; lsn=0/26EB5E8, redo lsn=0/26EB590
+2026-02-16 14:54:47.367 WIB [10133] LOG:  checkpoint starting: time
+2026-02-16 14:54:48.033 WIB [10133] LOG:  checkpoint complete: wrote 6 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.620 s, sync=0.011 s, total=0.666 s; sync files=7, longest=0.005 s, average=0.002 s; distance=14 kB, estimate=14 kB; lsn=0/26EEDF0, redo lsn=0/26EED98
+2026-02-16 14:55:19.358 WIB [10127] LOG:  received fast shutdown request
+2026-02-16 14:55:19.364 WIB [10127] LOG:  aborting any active transactions
+2026-02-16 14:55:19.376 WIB [10127] LOG:  background worker "logical replication launcher" (PID 10138) exited with exit code 1
+2026-02-16 14:55:19.377 WIB [10133] LOG:  shutting down
+2026-02-16 14:55:19.380 WIB [10133] LOG:  checkpoint starting: shutdown immediate
+2026-02-16 14:55:19.399 WIB [10133] LOG:  checkpoint complete: wrote 0 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.001 s, total=0.022 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=12 kB; lsn=0/26EEEA0, redo lsn=0/26EEEA0
+2026-02-16 14:55:19.476 WIB [10127] LOG:  database system is shut down
+2026-02-17 10:24:52.660 WIB [19020] LOG:  starting PostgreSQL 18.1 on aarch64-unknown-linux-android, compiled by Android (13989888, +pgo, +bolt, +lto, +mlgo, based on r563880c) clang version 21.0.0 (https://android.googlesource.com/toolchain/llvm-project 5e96669f06077099aa41290cdb4c5e6fa0f59349), 64-bit
+2026-02-17 10:24:52.665 WIB [19020] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-02-17 10:24:52.672 WIB [19020] LOG:  listening on Unix socket "/data/data/com.termux/files/usr/tmp/.s.PGSQL.5432"
+2026-02-17 10:24:52.707 WIB [19028] LOG:  database system was interrupted; last known up at 2026-02-16 17:24:54 WIB
+2026-02-17 10:24:53.164 WIB [19028] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-02-17 10:24:53.178 WIB [19028] LOG:  redo starts at 0/26F5D60
+2026-02-17 10:24:53.178 WIB [19028] LOG:  invalid record length at 0/26F5E68: expected at least 24, got 0
+2026-02-17 10:24:53.178 WIB [19028] LOG:  redo done at 0/26F5E30 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2026-02-17 10:24:53.196 WIB [19026] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-02-17 10:24:53.217 WIB [19026] LOG:  checkpoint complete: wrote 0 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.008 s, sync=0.002 s, total=0.023 s; sync files=2, longest=0.002 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/26F5E68, redo lsn=0/26F5E68
+2026-02-17 10:24:53.255 WIB [19020] LOG:  database system is ready to accept connections
+2026-02-17 10:29:53.288 WIB [19026] LOG:  checkpoint starting: time
+2026-02-17 10:29:53.850 WIB [19026] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.526 s, sync=0.005 s, total=0.569 s; sync files=6, longest=0.002 s, average=0.001 s; distance=13 kB, estimate=13 kB; lsn=0/26F9540, redo lsn=0/26F94E8
+2026-02-17 10:34:53.950 WIB [19026] LOG:  checkpoint starting: time
+2026-02-17 10:34:54.607 WIB [19026] LOG:  checkpoint complete: wrote 6 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.621 s, sync=0.009 s, total=0.657 s; sync files=7, longest=0.004 s, average=0.002 s; distance=14 kB, estimate=14 kB; lsn=0/26FCFF8, redo lsn=0/26FCFA0
+2026-02-17 10:44:53.743 WIB [19026] LOG:  checkpoint starting: time
+2026-02-17 10:44:54.286 WIB [19026] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.517 s, sync=0.006 s, total=0.544 s; sync files=6, longest=0.003 s, average=0.001 s; distance=14 kB, estimate=14 kB; lsn=0/2700B98, redo lsn=0/2700B40
+2026-02-17 11:42:00.512 WIB [3427] LOG:  starting PostgreSQL 18.1 on aarch64-unknown-linux-android, compiled by Android (13989888, +pgo, +bolt, +lto, +mlgo, based on r563880c) clang version 21.0.0 (https://android.googlesource.com/toolchain/llvm-project 5e96669f06077099aa41290cdb4c5e6fa0f59349), 64-bit
+2026-02-17 11:42:00.518 WIB [3427] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-02-17 11:42:00.527 WIB [3427] LOG:  listening on Unix socket "/data/data/com.termux/files/usr/tmp/.s.PGSQL.5432"
+2026-02-17 11:42:00.562 WIB [3437] LOG:  database system was interrupted; last known up at 2026-02-17 10:44:54 WIB
+2026-02-17 11:42:01.011 WIB [3437] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-02-17 11:42:01.029 WIB [3437] LOG:  redo starts at 0/2700B40
+2026-02-17 11:42:01.034 WIB [3437] LOG:  invalid record length at 0/2702CB8: expected at least 24, got 0
+2026-02-17 11:42:01.035 WIB [3437] LOG:  redo done at 0/2702C80 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2026-02-17 11:42:01.058 WIB [3435] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-02-17 11:42:01.086 WIB [3435] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.011 s, sync=0.007 s, total=0.031 s; sync files=7, longest=0.003 s, average=0.001 s; distance=8 kB, estimate=8 kB; lsn=0/2702CB8, redo lsn=0/2702CB8
+2026-02-17 11:42:01.099 WIB [3427] LOG:  database system is ready to accept connections
+2026-02-17 11:47:01.188 WIB [3435] LOG:  checkpoint starting: time
+2026-02-17 11:47:02.167 WIB [3435] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.942 s, sync=0.012 s, total=0.980 s; sync files=10, longest=0.005 s, average=0.002 s; distance=19 kB, estimate=19 kB; lsn=0/27079E8, redo lsn=0/2707990
+2026-02-17 11:52:01.257 WIB [3435] LOG:  checkpoint starting: time
+2026-02-17 11:52:01.864 WIB [3435] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.551 s, sync=0.007 s, total=0.611 s; sync files=6, longest=0.003 s, average=0.002 s; distance=9 kB, estimate=18 kB; lsn=0/270A080, redo lsn=0/270A028
+2026-02-17 12:07:02.044 WIB [3435] LOG:  checkpoint starting: time
+2026-02-17 12:07:02.596 WIB [3435] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.518 s, sync=0.010 s, total=0.552 s; sync files=6, longest=0.004 s, average=0.002 s; distance=16 kB, estimate=18 kB; lsn=0/270E2D0, redo lsn=0/270E278
+2026-02-17 12:12:02.669 WIB [3435] LOG:  checkpoint starting: time
+2026-02-17 12:12:03.349 WIB [3435] LOG:  checkpoint complete: wrote 6 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.626 s, sync=0.030 s, total=0.681 s; sync files=7, longest=0.024 s, average=0.005 s; distance=20 kB, estimate=20 kB; lsn=0/27134B0, redo lsn=0/2713458
+2026-02-17 12:22:02.531 WIB [3435] LOG:  checkpoint starting: time
+2026-02-17 12:22:03.505 WIB [3435] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.936 s, sync=0.012 s, total=0.976 s; sync files=10, longest=0.004 s, average=0.002 s; distance=15 kB, estimate=19 kB; lsn=0/2717370, redo lsn=0/2717318
+2026-02-17 12:27:02.608 WIB [3435] LOG:  checkpoint starting: time
+2026-02-17 12:27:03.176 WIB [3435] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.532 s, sync=0.006 s, total=0.570 s; sync files=6, longest=0.002 s, average=0.001 s; distance=12 kB, estimate=19 kB; lsn=0/271A5E0, redo lsn=0/271A588

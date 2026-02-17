@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
 
-  </head>
-  <body>
     {% if page_obj.has_other_pages %}
       <nav class="pagination is-centered mt-5" role="navigation">
         {% if page_obj.has_previous %}
@@ -55,5 +47,3 @@
 </nav>
 {% endif %}
     </nav>
-  </body>
-</html>

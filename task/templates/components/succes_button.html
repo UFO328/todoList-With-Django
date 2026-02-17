@@ -1,0 +1,6 @@
+<form action="{% url 'task_app:succes_task' task.id %}" method="POST">
+      {% csrf_token %}
+      <div class="field">
+      <button type="submit" class="button is-primary is-small">Selesai</button>
+      </div>
+ </form>
