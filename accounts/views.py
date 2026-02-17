@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from .package import send_otp
 from .models import OTP
 from django.contrib.auth import login,authenticate,logout
+from django.contrib.auth.decorators import login_required
 
 def registrasi(request):
   if request.method == 'POST':
@@ -87,3 +88,8 @@ def login_user(request):
       messages.error(request,'USERNAME ATAU PASSWORD SALAH')
       return redirect('accounts_app:login')
   return render(request,'account/login.html')
+
+@login_required
+def log_out(request):
+  logout(request)
+  return redirect('accounts_app:login')
